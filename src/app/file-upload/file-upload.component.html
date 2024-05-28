@@ -1,6 +1,17 @@
-<h1>Select your files</h1>
+<div class="container">
+    <h1>Select your files</h1>
 
+    <div class="drop-zone" (drop)="dropHandler($event);" (dragover)="dragOverHandler($event);">
+        <p>Drag one or more files to this <i>drop zone</i>.</p>
+    </div>
 
-<div id="drop_zone" (drop)="dropHandler($event);" (dragover)="dragOverHandler($event);">
-    <p>Drag one or more files to this <i>drop zone</i>.</p>
+    <div>
+        @for (file of files; track file.name) {
+        <div>
+            <span>{{$index}} --&gt;</span>
+            {{file.name}}
+            <button (click)="removeFile(file)" mat-icon-button color="warn"><mat-icon>cancel</mat-icon></button>
+        </div>
+        }
+    </div>
 </div>
