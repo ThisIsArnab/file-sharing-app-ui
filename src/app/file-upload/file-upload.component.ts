@@ -22,7 +22,6 @@ export class FileUploadComponent {
         event.preventDefault();
 
         if (event.dataTransfer?.items) {
-            // event.dataTransfer.items
             // Use DataTransferItemList interface to access the file(s)
             [...event.dataTransfer.items].forEach((item, i) => {
                 // If dropped items aren't files, reject them
@@ -45,10 +44,16 @@ export class FileUploadComponent {
 
     dragOverHandler(event: DragEvent) {
         event.preventDefault();
-        // console.log('Dragover event', event);
     }
 
     removeFile(index: number) {
         this.files.splice(index, 1);
+    }
+
+    inputFileHandler(files: FileList | null) {
+        if(files) {
+            [...files].forEach(file => this.files.push(file));
+        }
+        console.log('file input handler', files);
     }
 }
