@@ -48,7 +48,7 @@ export class FileUploadComponent {
         // console.log('Dragover event', event);
     }
 
-    removeFile(file: File) {
-        
+    removeFile(index: number) {
+        this.files.splice(index, 1);
     }
 }
