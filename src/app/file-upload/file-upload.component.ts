@@ -56,4 +56,8 @@ export class FileUploadComponent {
         }
         console.log('file input handler', files);
     }
+
+    uploadFiles() {
+        
+    }
 }

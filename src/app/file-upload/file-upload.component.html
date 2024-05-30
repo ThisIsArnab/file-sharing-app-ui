@@ -2,7 +2,7 @@
     <h1>Select your files</h1>
 
     @if (files.length > 0) {
-    <button mat-flat-button color="primary">Upload Files</button>
+    <button (click)="uploadFiles()" mat-flat-button color="primary">Upload Files</button>
     }
 
     <label for="file-upload">
